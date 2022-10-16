@@ -11,8 +11,8 @@ form.addEventListener('input', throttle(onInputChanges, 500));
 onPageReload();
 
 function onInputChanges() {
-    const email = name.value;
-    const message = messageEl.value;
+  const email = name.value;
+  const message = messageEl.value;
 
     const formData = {
         email,
@@ -35,7 +35,7 @@ function onFormSubmit(e) {
     e.currentTarget.reset();
   
     localStorage.removeItem(LOCAL_KEY);
-  }
+  };
 
 
 function onPageReload() {
@@ -43,7 +43,7 @@ function onPageReload() {
   const parsedData = JSON.parse(savedData);
 
   if (parsedData) {
-    nameEl.value = parsedData.email;
+    name.value = parsedData.email;
     messageEl.value = parsedData.message;
   }
-}
+};
