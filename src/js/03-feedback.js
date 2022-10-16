@@ -2,7 +2,7 @@ import throttle from 'lodash.throttle';
 
 const form = document.querySelector('.feedback-form');
 const name = form.querySelector('input');
-const message = form.querySelector('textarea');
+const messageEl = form.querySelector('textarea');
 const LOCAL_KEY = 'feedback-form-state';
 
 form.addEventListener('submit', onFormSubmit);
@@ -12,7 +12,7 @@ onPageReload();
 
 function onInputChanges() {
     const email = name.value;
-    const message = message.value;
+    const message = messageEl.value;
 
     const formData = {
         email,
